@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Hospital</title>
+    <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-white bg-white py-3">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><img class="logo" src="assets/images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about_us.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact_us.html">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Departments</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="thyroid.html">Thyroid Disease</a></li>
+              <li><a class="dropdown-item" href="pnemonia.html">Pneumonia</a></li>
+              <li><a class="dropdown-item" href="diabetic.html">Diabetic Retinopathy</a></li>
+              <li><a class="dropdown-item" href="brain_tumor.html">Brain Tumor</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img class="user-img" src="assets/images/user.jpg"></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="profile.html">Your Profile</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <section class="py-5">
+        <h3 class="text-center mt-5">Thyroid Disease Detection</h3>
+        <div class="separator"></div>
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-6 col-10 m-auto section-bg thyroid_section p-5">
+                <form method="POST">
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <label class="form-label">What is your Age?</label>
+                      <input type="number" class="form-control" name="age">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">What is your Gender?</label>
+                      <select class="form-control" id="gender" name="gender">
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                      </select>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="pregnant">
+                      <label class="form-label">Are you pregnant?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pregnant" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="pregnant" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you ever taken thyroxine?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_on_thyroxine" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_on_thyroxine" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you take thyroxine right now?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="on_thyroxine" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="on_thyroxine" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you take antithyroid medication?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="on_antithyroid_medication" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="on_antithyroid_medication" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Are you sick?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sick" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sick" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you ever make thyroid surgery?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="thyroid_surgery" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="thyroid_surgery" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you ever take I131 radiotherapy treatment?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="I131_treatment" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="I131_treatment" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Did you find out if you have hypothyroid?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_hypothyroid" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_hypothyroid" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Did you find out if you have hyperthyroid?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_hyperthyroid" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="query_hyperthyroid" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you take lithium medication?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lithium" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lithium" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you have enlarged thyroid (goitre)?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="goitre" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="goitre" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you have tumor in your thyroid gland?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tumor" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tumor" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you have hypopituitary?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="hypopituitary" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="hypopituitary" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Do you have psych diseases?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="psych" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="psych" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured TSH?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('TSH')" type="radio" name="TSH_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('TSH')" type="radio" name="TSH_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="TSH">
+                      <label class="form-label">TSH</label>
+                      <input type="number" class="form-control" name="TSH">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured T3?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('T3')" type="radio" name="T3_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('T3')" type="radio" name="T3_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="T3">
+                      <label class="form-label">T3</label>
+                      <input type="number" class="form-control" name="T3">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured TT4?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('TT4')" type="radio" name="TT4_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('TT4')" type="radio" name="TT4_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="TT4">
+                      <label class="form-label">TT4</label>
+                      <input type="number" class="form-control" name="TT4">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured T4U?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('T4U')" type="radio" name="T4U_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('T4U')" type="radio" name="T4U_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="T4U">
+                      <label class="form-label">T4U</label>
+                      <input type="number" class="form-control" name="T4U">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured FTI?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('FTI')" type="radio" name="FTI_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('FTI')" type="radio" name="FTI_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="FTI">
+                      <label class="form-label">FTI</label>
+                      <input type="number" class="form-control" name="FTI">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Have you measured TBG?</label>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="displayInput('TBG')" type="radio" name="TBG_measured" value="t">
+                        <label class="form-check-label">
+                          Yes
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" onclick="removeInput('TBG')" type="radio" name="TBG_measured" value="f">
+                        <label class="form-check-label">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="col-12 mb-3 d-none" id="TBG">
+                      <label class="form-label">TBG</label>
+                      <input type="number" class="form-control" name="TBG">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                      <label class="form-label">Referral source</label>
+                      <select class="form-control" id="gender" name="referral_source">
+                        <option value="SVHC">SVHC</option>
+                        <option value="SVI">SVI</option>
+                        <option value="STMW">STMW</option>
+                        <option value="other">other</option>
+                      </select>
+                    </div>
+
+                  </div>
+                  <button type="submit" class="btn btn-primary">Predict</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-3 mt-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <ul class="list-unstyled">
+              <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">About Us</a></li>
+              <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">Contact Us</a></li>
+              <li id="departments"><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" data-bs-toggle="collapse" href="#collapse" role="button" aria-expanded="false" aria-controls="collapseExample">Departments</a></li>
+              <div class="collapse ps-3" id="collapse">
+                <ul class="list-unstyled">
+                  <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">Thyroid Disease</a></li>
+                  <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">Pneumonia</a></li>
+                  <li><i class="bx bx-chevron-right text-primary"></i><a class="text-decoration-none" href="#">Diabetic Retinopathy</a></li>
+                </ul>
+              </div>
+            </ul>
+          </div>
+          <div class="col-md-6 col-12">
+            <img class="logo" src="assets/images/logo.png">
+            <p class="mt-3">
+              &copy; Copyright <strong><span>Virtual Hospital</span></strong>. All Rights Reserved
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+</body>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/formHandler.js"></script>
+<script src="assets/js/main.js"></script>
+</html>
